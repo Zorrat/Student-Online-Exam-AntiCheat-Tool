@@ -44,12 +44,13 @@ faceNames = []
 faceEncodingsKnown = []
 fileNames = os.listdir(faceDir)
 for fn in fileNames:
-    faceIm = faceRec.load_image_file(faceDir + '/' +fn)
-    faceEnc = faceRec.face_encodings(faceIm)[0]
-    faceImages.append(faceIm)
-    faceEncodingsKnown.append(faceEnc)
-    faceName = fn[:-4]
-    faceNames.append(faceName)
+    if fn[-3:]  in ['png','jpg']:
+        faceIm = faceRec.load_image_file(faceDir + '/' +fn)
+        faceEnc = faceRec.face_encodings(faceIm)[0]
+        faceImages.append(faceIm)
+        faceEncodingsKnown.append(faceEnc)
+        faceName = fn[:-4]
+        faceNames.append(faceName)
     
 print('Faces Found in Faces Directory')
 print(*faceNames)

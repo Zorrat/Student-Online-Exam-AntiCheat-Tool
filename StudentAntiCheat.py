@@ -65,12 +65,13 @@ faceNames = []
 faceEncodingsKnown = []
 fileNames = os.listdir(faceDir)
 for fn in fileNames:
-    faceIm = faceRec.load_image_file(faceDir + '/' +fn)
-    faceEnc = faceRec.face_encodings(faceIm)[0]
-    faceImages.append(faceIm)
-    faceEncodingsKnown.append(faceEnc)
-    faceName = fn[:-4]
-    faceNames.append(faceName)
+    if fn[-3:]  in ['png','jpg']:
+        faceIm = faceRec.load_image_file(faceDir + '/' +fn)
+        faceEnc = faceRec.face_encodings(faceIm)[0]
+        faceImages.append(faceIm)
+        faceEncodingsKnown.append(faceEnc)
+        faceName = fn[:-4]
+        faceNames.append(faceName)
     
 print('Faces Found in Faces Directory')
 print(*faceNames)
@@ -113,6 +114,8 @@ while success:
         break
 toc = time.time()
 
+cv2.destroyAllWindows()
+vidcap.release()
 print('Time Taken To Finish Rendering', round((toc-tic)/60,2),'min')
 
 ####### Save Video from saved images to output directory if Save flag specified ####
@@ -124,8 +127,7 @@ if args.s:
     clip.write_videofile("Output/"+args.n+".mp4",fps=fps)
     print('Save Complete to /Output')
 
-cv2.destroyAllWindows()
-vidcap.release()
+
 print('Total frames in capture: ',fc)
 
 print('Total number of Frames where the student was missing: ',absentFramesTotal)

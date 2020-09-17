@@ -20,6 +20,9 @@ models/yolo/yolov4.h5
 https://drive.google.com/file/d/1RCD4x8rudipNBahxO6Tsk4VsmhbxrmBL/view?usp=sharing
 
 3) Press 'Q' during rendering to abort.
+
+![Help](https://github.com/Zorrat/Student-Online-Exam-AntiCheat-Tool/blob/master/models/images/Capture.PNG)
+
 ```
     python StudentAntiCheat.py --path "TestVideo.mp4" --name "FirstName LastName" --fps 12 --phone true --save --verbose
  ```       

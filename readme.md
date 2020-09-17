@@ -2,8 +2,13 @@
 
 In the age of a global pandemic the entire industry has shifted to a work from home enviornment. However Student Examintions taken online are still a tricky problem to solve as there are still a lot of loop holes for students to use while giving online exams or sitting for online lectures.
 
+
+![Demo of app](https://github.com/Zorrat/Student-Online-Exam-AntiCheat-Tool/blob/master/models/images/demo.gif)
+
 The Student Anti-Cheat Tool helps reduce these problem by detecting students faces with face recognition for identification and 
 Students onscreen time with cellphone cheating detection.
+
+
 
 Note :- Cell phone Detection uses Yolo V4 for object detection and will impact performance.
  
@@ -23,6 +28,8 @@ https://drive.google.com/file/d/1RCD4x8rudipNBahxO6Tsk4VsmhbxrmBL/view?usp=shari
 
 ![Help](https://github.com/Zorrat/Student-Online-Exam-AntiCheat-Tool/blob/master/models/images/Capture.PNG)
 
+
+4) Similar Usage for webcamDemo.py. This will render your webcam feed live with object detection and face detection for testing.
 ```
     python StudentAntiCheat.py --path "TestVideo.mp4" --name "FirstName LastName" --fps 12 --phone true --save --verbose
  ```       

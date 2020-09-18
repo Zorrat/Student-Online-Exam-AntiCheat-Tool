@@ -34,8 +34,22 @@ https://drive.google.com/file/d/1RCD4x8rudipNBahxO6Tsk4VsmhbxrmBL/view?usp=shari
     python StudentAntiCheat.py --path "TestVideo.mp4" --name "FirstName LastName" --fps 12 --phone true --save --verbose
  ```       
 
-    
+   
+Output:
+![Output](https://github.com/Zorrat/Student-Online-Exam-AntiCheat-Tool/blob/master/models/images/verbose-final-output.PNG)
 
+
+
+*Requires Cuda and CuDNN along with Tensorflow GPU Else CPU inference for phone detection will be extreemely slow*
+```
+TensorFlow version: 2.1.0
+Eager execution: True
+Keras version: 2.2.4-tf
+Cuda version: 10.1
+Cudnn version: 7.6
+Num Physical GPUs Available:  1
+Num Logical GPUs Available:  1
+```
 
 Note: Depending on certain Windows machines the face_recogntion library may not install correctly.
 
